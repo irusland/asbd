@@ -3,17 +3,17 @@ from textwrap import dedent
 
 from fastapi import APIRouter
 
-from api.data.client import DataClient
+from api.data.handler import DataHandler
 from api.data.model import Data
 
 
 class DataRouter(APIRouter):
-    def __init__(self, data_client: DataClient):
+    def __init__(self, data_handler: DataHandler):
         super().__init__()
-        self._data_client = data_client
+
         self.add_api_route(
             path="/data",
-            endpoint=self._read_data,
+            endpoint=data_handler.read_data,
             methods=[HTTPMethod.GET],
             response_model=list[Data],
             description=dedent(
@@ -24,10 +24,3 @@ class DataRouter(APIRouter):
                 """
             ),
         )
-
-    async def _read_data(self):
-        return []
-        # try:
-        #     return await self._data_client.get_all_data_sorted()
-        # except Exception as e:
-        #     raise HTTPException(status_code=500, detail=str(e))
