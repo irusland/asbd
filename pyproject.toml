@@ -12,6 +12,7 @@ asyncpg = "^0.29.0"
 sqlalchemy = "^2.0.31"
 pytest = "^8.3.2"
 punq = "^0.7.0"
+black = "^24.8.0"
 
 
 [build-system]

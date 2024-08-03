@@ -1,6 +1,7 @@
 from punq import Container, Scope
 
-from api.data.router import DataRouter, DataClient
+from api.data.client import DataClient
+from api.data.router import DataRouter
 from api.server import Server
 
 
