@@ -3,3 +3,6 @@ run:
 
 pretty:
 	black api/
+
+test:
+	pytest tests/
