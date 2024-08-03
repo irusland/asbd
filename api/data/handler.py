@@ -1,11 +1,17 @@
-from typing import Any
+import operator
+from asyncio import gather
+from itertools import chain
 
-from api.data.client import IDataClient
+from api.data.clients.interface import IDataClient
+from api.data.model import Data
 
 
 class DataHandler:
-    def __init__(self, data_client: IDataClient):
-        self._data_client = data_client
+    def __init__(self, data_clients: list[IDataClient]):
+        self._data_clients = data_clients
 
-    async def read_data(self) -> list[dict[str, Any]]:
-        return sorted(await self._data_client.get_data(), key=lambda x: x["id"])
+    async def read_data(self) -> list[Data]:
+        data_parts = await gather(
+            *[data_client.get_data() for data_client in self._data_clients]
+        )
+        return sorted(chain(*data_parts), key=operator.attrgetter("id"))
