@@ -10,7 +10,9 @@ from api.data.model import Data
 
 
 class BaseDBDataClient(IDataClient):
-    def __init__(self, settings: BaseDBDataClientSettings, data_model: type[AbstractUser]):
+    def __init__(
+        self, settings: BaseDBDataClientSettings, data_model: type[AbstractUser]
+    ):
         self._settings = settings
         engine = create_async_engine(
             settings.url,

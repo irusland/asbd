@@ -8,7 +8,7 @@ from api.data.clients.db.settings import DB1DataClientSettings
 from api.data.db.models.user import User1
 from api.data.model import Data
 from db.fill_data import (
-    fill_tables, Source, CREATE_USERS_SQL_JINJA, execute_sqls,
+    Source, CREATE_USERS_SQL_JINJA, execute_sqls,
     render_create_sqls,
 )
 
