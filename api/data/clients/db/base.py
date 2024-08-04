@@ -16,9 +16,9 @@ class BaseDBDataClient(IDataClient):
             settings.url,
             echo=settings.echo,
             connect_args={
-                'connect_timeout': settings.connect_timeout.total_seconds(),
-                'read_timeout': settings.read_timeout.total_seconds(),
-            }
+                "connect_timeout": settings.connect_timeout.total_seconds(),
+                "read_timeout": settings.read_timeout.total_seconds(),
+            },
         )
         self._async_session = async_sessionmaker(engine, expire_on_commit=False)
 

@@ -7,5 +7,7 @@ from api.data.model import Identifier, Name
 class User(Base):
     __tablename__ = "user"
 
-    id: Mapped[Identifier] = mapped_column(primary_key=True, autoincrement=True, index=True)
+    id: Mapped[Identifier] = mapped_column(
+        primary_key=True, autoincrement=True, index=True
+    )
     name: Mapped[Name]

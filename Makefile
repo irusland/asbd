@@ -4,7 +4,7 @@ export $(shell sed 's/=.*//' .env)
 run:
 	fastapi dev api/app.py
 
-pretty:
+format:
 	black api/
 
 test:
