@@ -1,0 +1,11 @@
+CREATE TABLE data_{{ source_number }}
+(
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+INSERT INTO data_{{ source_number }} (id, name)
+VALUES
+{% for id, name in values %}
+    ({{ id }}, '{{ name }}'){% if not loop.last %},{% endif %}
+{% endfor %};
