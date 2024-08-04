@@ -15,7 +15,8 @@ class DataHandler:
 
         data_parts_results = await gather(*coroutines, return_exceptions=True)
         data = chain.from_iterable(
-            data_result for data_result in data_parts_results if
-            not isinstance(data_result, BaseException)
+            data_result
+            for data_result in data_parts_results
+            if not isinstance(data_result, BaseException)
         )
         return sorted(data, key=operator.attrgetter("id"))
