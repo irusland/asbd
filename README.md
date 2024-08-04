@@ -24,6 +24,7 @@ docker-compose up -d
 ```
 To fill the database with data use [fill_data.py](db/fill_data.py)
 ```sh
+export PYTHONPATH=.
 python db/fill_data.py
 ```
 The database should now be filled with data:

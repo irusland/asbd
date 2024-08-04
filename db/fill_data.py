@@ -11,7 +11,7 @@ from api.data.clients.db.settings import (
     BaseDBDataClientSettings,
     DB1DataClientSettings,
     DB2DataClientSettings,
-    DB3DataClientSettings
+    DB3DataClientSettings,
 )
 from paths import CURRENT_DIR
 
