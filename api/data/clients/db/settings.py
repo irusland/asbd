@@ -9,8 +9,7 @@ class BaseDBDataClientSettings(BaseSettings):
 
     echo: bool = True
 
-    connect_timeout: timedelta = timedelta(seconds=1)
-    read_timeout: timedelta = timedelta(seconds=2)
+    timeout: timedelta = timedelta(seconds=2)
 
 
 class DB1DataClientSettings(BaseDBDataClientSettings):
