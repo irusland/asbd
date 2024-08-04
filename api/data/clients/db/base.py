@@ -24,6 +24,6 @@ class BaseDBDataClient(IDataClient):
 
     async def get_data(self) -> Sequence[Data]:
         async with self._async_session() as session:
-            stmt = select(self._data_model)
-            result = list(await session.scalars(stmt))
+            statement = select(self._data_model)
+            result = list(await session.scalars(statement))
             return [Data.model_validate(user.__dict__) for user in result]
