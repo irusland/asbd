@@ -28,6 +28,7 @@ export PYTHONPATH=.
 python db/fill_data.py
 ```
 The database should now be filled with data:
+
 ![db.png](media/db.png)
 
 ## Running the Server
@@ -41,6 +42,7 @@ To start the server, run:
 make run
 ```
 Use swagger to interact with the API:
+
 ![api.png](media/api.png)
 
 ## Running the Tests
