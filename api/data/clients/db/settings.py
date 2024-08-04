@@ -1,6 +1,5 @@
 from datetime import timedelta
 
-from pydantic import AnyUrl
 from pydantic.v1 import BaseSettings
 
 

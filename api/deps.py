@@ -1,11 +1,15 @@
 from punq import Container, Scope
 from pydantic.v1 import BaseSettings
 
-from api.data.clients.db.client import DB1DataClient, DB2DataClient, DB3DataClient
+from api.data.clients.db.client import (
+    DB1DataClient,
+    DB2DataClient,
+    DB3DataClient
+)
 from api.data.clients.db.settings import (
     DB1DataClientSettings,
     DB2DataClientSettings,
-    DB3DataClientSettings,
+    DB3DataClientSettings
 )
 from api.data.clients.interface import IDataClient
 from api.data.handler import DataHandler

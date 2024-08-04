@@ -2,7 +2,7 @@ from api.data.clients.db.base import BaseDBDataClient
 from api.data.clients.db.settings import (
     DB1DataClientSettings,
     DB2DataClientSettings,
-    DB3DataClientSettings,
+    DB3DataClientSettings
 )
 from api.data.db.models.user import User1, User2, User3
 

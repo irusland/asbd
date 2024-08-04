@@ -1,17 +1,18 @@
 import asyncio
 import re
 from textwrap import dedent
-from typing import NamedTuple, Iterator, Sequence
+from typing import Iterator, NamedTuple, Sequence
 
 import asyncpg
+from dotenv import load_dotenv
 from jinja2 import Template
 
 from api.data.clients.db.settings import (
-    DB1DataClientSettings, DB2DataClientSettings,
-    DB3DataClientSettings, BaseDBDataClientSettings,
+    BaseDBDataClientSettings,
+    DB1DataClientSettings,
+    DB2DataClientSettings,
+    DB3DataClientSettings
 )
-from dotenv import load_dotenv
-
 from paths import CURRENT_DIR
 
 CREATE_USERS_SQL_JINJA = CURRENT_DIR / 'db' / 'create_users.sql.jinja'
